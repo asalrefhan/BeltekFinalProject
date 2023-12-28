@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Ogretmen
+
+
+
+<h1>Öğretmen Düzenle</h1>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+<form asp-controller="Ogretmen" asp-action="OgretmenDuzenle" method="post">
+
+    <input type="hidden" asp-for="TcKimlik" />
+
+    <div class="mb-3 mt-5">
+        <label asp-for="Ad" class="form-label"></label>
+        <input asp-for="Ad" type="text" class="form-control" />
+        <span asp-validation-for="Ad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Soyad" class="form-label"></label>
+        <input asp-for="Soyad" class="form-control" />
+        <span asp-validation-for="Soyad" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Alan" class="form-label"></label>
+        <input asp-for="Alan" class="form-control" />
+        <span asp-validation-for="Alan" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Kaydet" class="btn btn-primary" />
+    <a asp-controller="Ogretmen" asp-action="OgretmenListele" class="btn btn-secondary">Geri</a>
+</form>
